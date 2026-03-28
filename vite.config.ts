@@ -12,8 +12,11 @@ function getPlugins() {
 }
 
 export default defineConfig({
-  base: './',
-  plugins: getPlugins(),
+  base: '/Chensu_the_newest/',
+  plugins: [react(), tsconfigPaths()], 
+  build: {
+    outDir: 'dist' // 直接输出到 dist 根目录，让 index.html 放在 dist/ 下
+  },
   server: {
     allowedHosts: true, // 允许所有外部域名访问（包括 ngrok）
     host: true,         // 监听所有网络地址

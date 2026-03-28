@@ -1,15 +1,13 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import { Toaster } from 'sonner';
-import App from "./App.tsx";
-import "./index.css";
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { HashRouter } from 'react-router-dom' // 导入HashRouter
+import App from './App'
+import './index.css'
 
-createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <BrowserRouter>
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <HashRouter> {/* 用HashRouter替代BrowserRouter，无其他配置 */}
       <App />
-      <Toaster />
-    </BrowserRouter>
-  </StrictMode>
-);
+    </HashRouter>
+  </React.StrictMode>,
+)
